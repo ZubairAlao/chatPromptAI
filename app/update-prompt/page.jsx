@@ -58,7 +58,7 @@ export default function EditPrompt() {
          }
     }
   return (
-    <Suspense>
+    <Suspense fallback={<div>Loading...</div>}>
       <Form
           type="Edit"
           post={post}
