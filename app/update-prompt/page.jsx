@@ -11,6 +11,12 @@ export default function EditPrompt() {
     const searchParams = useSearchParams();
     const promptId = searchParams.get('id')
 
+    const [submitting, setSubmitting] = useState(false)
+    const [post, setPost] = useState({
+        prompt: "",
+        tag: "",
+    });
+
     useEffect(() => {
       const getPromptDetails = async() => {
         const response = await fetch(`/api/prompt/${promptId}`)
@@ -26,12 +32,6 @@ export default function EditPrompt() {
       if(promptId) getPromptDetails();
     
     }, [promptId])
-
-    const [submitting, setSubmitting] = useState(false)
-    const [post, setPost] = useState({
-        prompt: "",
-        tag: "",
-    });
 
     const updatePrompt = async (e) => {
          e.preventDefault();
