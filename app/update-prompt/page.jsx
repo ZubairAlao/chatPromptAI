@@ -6,7 +6,7 @@ import { useRouter, useSearchParams } from 'next/navigation'
 import Form from '@components/Form';
 
 
-function EditPrompt() {
+export default function EditPrompt() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const promptId = searchParams.get('id')
@@ -70,13 +70,3 @@ function EditPrompt() {
 
   )
 }
-
-const Page = () => {
-  return (
-    <Suspense>
-      <EditPrompt />
-    </Suspense>
-  )
-}
-
-export default Page
